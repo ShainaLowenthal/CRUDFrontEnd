@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-import Student from '../Student/Student';
-import Campus from '../Campus/Campus';
+
+
+import PropTypes from 'prop-types';
+
+import Student from '.../components/Student';
+import Campus from '../components/Campus';
 
 const student = {
   imageSrc: 'img/src',
@@ -20,8 +24,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <Student> <Student/>
-
+         <Student></Student>
+         <Campus></Campus>
       </div>
     );
   }
