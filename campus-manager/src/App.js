@@ -5,8 +5,8 @@ import './App.css';
 
 import PropTypes from 'prop-types';
 
-import Student from '.../components/Student';
-import Campus from '../components/Campus';
+import Student from '.../src/components/Student';
+import Campus from '.../src/components/Campus';
 
 const student = {
   imageSrc: 'img/src',
