@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 //import logo from './logo.svg';  because not necc
-import './App.css';
+// import './App.css';
 
 // class Campus extends Component{
 //     constructor(props){

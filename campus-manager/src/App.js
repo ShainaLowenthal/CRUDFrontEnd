@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-import Student from '../Student/Student';
-import Campus from '../Campus/Campus';
+import Student from '../src/Components/Student';
+import Campus from '../src/Components/Campus';
 
 const student = {
   imageSrc: 'img/src',
@@ -19,8 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>ravenous</h1>
-        <Student> <Student/>
+        <Student imageSrc="img/src" fullName="Bob The Builder" email="student@successfulCampus.org" gpa= "4.0" campus="Hunter" hasCampus="true"/>
 
       </div>
     );
