@@ -1,43 +1,53 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-//import logo from './logo.svg';  because not necc
-import './App.css';
 
-// class Campus extends Component{
-//     constructor(props){
-//         super(props);
-//         this.state ={
-//             name: props.name
-//             image: props.image
-//             address: props.address
-//             description: props.descrition
+//import Student from '../src/Components/Student';
 
-
-
-//         }
-//     }
-
-
-// }
 class Campus extends Component{
 
     constructor(props){
         super(props);
+        this.state =
+        {Name: 'name',
+        Image: 'image',
+        Address: 'address',
+        Description: 'description',
+        Students: 'students',
+        mess: true
+    };
+
     }
     render(){
-        return<h1>
-            Name: {this.props.name}
-            Image: {this.props.image}
-            Address: {this.props.address}
-            Description: {this.props.description}
-        </h1>;
+    if(this.state.mess)
+    {
+        return<body>
+            <h1>CAMPUS INFO</h1>
+            <div>  Name: {this.props.name}</div>
+           <div>Image: {this.props.image}</div>
+            <div>Address: {this.props.address}</div>
+            <div> Description: {this.props.description}</div>
+            <div>  Students on campus: {this.props.students} onChange = {this.toggleHidden.bind(this)}</div></body>;
+    }
+    else 
+    {
+        return<body>
+            <h1>CAMPUS INFO</h1>
+            <div>  Name: {this.props.name}</div>
+           <div>Image: {this.state.image}</div>
+            <div>Address: {this.props.address}</div>
+            <div> Description: {this.props.description}</div>
+            <div>There are no students currently registered to this campus.</div></body>;
+    }
+    
     }
 }
 Campus.propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    Name: PropTypes.string.isRequired,
+    Image: PropTypes.string.isRequired,
+    Address: PropTypes.string.isRequired,
+    Sescription: PropTypes.string.isRequired,
+    Students: PropTypes.objectOf(PropTypes.students),
+    mess: PropTypes.bool
 }
 export default Campus;
 
