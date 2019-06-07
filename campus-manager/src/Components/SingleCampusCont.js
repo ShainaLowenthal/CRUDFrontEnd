@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import {Link} from 'react-router-dom';
 //import Student from '../src/Components/Student';
 
 class Campus extends Component{
@@ -9,7 +9,9 @@ class Campus extends Component{
         super(props);
         this.state =
         {
-        hasStudent: false
+        hasStudent: false,
+        url: "http://localhost:3000/Campus"
+        
     };
 
     }
@@ -24,20 +26,25 @@ class Campus extends Component{
             <div>Address: {this.props.address}</div>
             <div> Description: {this.props.description}</div>
             <div>  Students on campus: {!this.props.hasStudent ?
-            "This campus does not have any students." :this.props.student}</div>
+            "This campus does not have any students." :this.props.students}</div>
+
+            <button>DELETE</button>
+            <button>Edit</button>
             </body>;
+            
     
    
     
     }
 }
 Campus.propTypes = {
-    Name: PropTypes.string.isRequired,
-    Image: PropTypes.string,
-    Address: PropTypes.string.isRequired,
-    Sescription: PropTypes.string.isRequired,
-    Students: PropTypes.objectOf(PropTypes.students),
-    hasStudent: PropTypes.bool
+    name: PropTypes.string,
+    image: PropTypes.string,
+    address: PropTypes.string,
+    description: PropTypes.string,
+    students: PropTypes.objectOf(PropTypes.students),
+    hasStudent: PropTypes.bool,
+    id: PropTypes.string
 }
 export default Campus;
 
