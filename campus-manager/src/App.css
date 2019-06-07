@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+.stud{ 
+  color:grey;
+}
+.title{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
