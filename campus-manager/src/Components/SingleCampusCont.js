@@ -13,13 +13,17 @@ class Campus extends Component{
         url: "http://localhost:3000/Campus"
         
     };
-
     }
+handleRemove = event =>
+{
+    delete this.state.campus;
+}
+
     render(){
    
         return<body>
             <h1>CAMPUS INFO  </h1>
-            <div class ="campus"></div>
+            <div className ="campus"></div>
             <div>Name: {this.props.name}</div>
            {/* <img src={this.props.image}>Image: </img> */}
            <div>Image: {this.props.image}</div>
@@ -28,7 +32,7 @@ class Campus extends Component{
             <div>  Students on campus: {!this.props.hasStudent ?
             "This campus does not have any students." :this.props.students}</div>
 
-            <button>DELETE</button>
+            <button onClick={this.handleremove}>X</button>
             <button>Edit</button>
             </body>;
             

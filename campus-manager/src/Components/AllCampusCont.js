@@ -17,6 +17,7 @@ const AllCampus = ()=>{
            {/* <button><Link to="/campusForm" >Add Campus!</Link></button> */}
             <Campus></Campus>
             <CampusForm></CampusForm>
+            
             </div>
            
         )
