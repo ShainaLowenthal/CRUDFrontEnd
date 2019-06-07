@@ -16,37 +16,40 @@ const student = {
   Campus: 'Hunter'
 
 };
-const campus = {
+const campus1 = {
   id: 'campusid',
   imageSrc: 'img/src',
   name: 'Hunter College',
-  address: '68th and LEx',
+  address: '68th and Lex',
   descrition:'elevators constantly broken...but there are free granola bars!'
 };
+const campus2 = {
+  id: 'campusid',
+  imageSrc: 'img/src',
+  name: 'Baruch College',
+  address: '25th and Lex',
+  descrition:'ajfehjw!'
+};
+const campus3 = {
+  id: 'campusid',
+  imageSrc: 'img/src',
+  name: 'Hunter College',
+  address: '68th and Lex',
+  descrition:'nadfbdbe!'
+};
 
-
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'Hunter College',
-  address: '68th and LEx',
-  descrition:'elevators constantly broken...but there are free granola bars!'
-      }
-    }
+let campuses =[campus1, campus2,campus3];
+ App = () => {
   render() {
 
-    // const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
      const HomeComponent = () => (<Home/> );
-    // const UserProfileComponent = () => (
-    //     <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
-
-    //);
+  
     const CampusComponent = () => (
         <Campus Name={this.props.name} address={this.props.address}  />
 
     );
+    const AllCampuses = ()=>(
+      <AllCampus {campuses.id} /> 
     const CampForm = () =>(
       <CampusForm Name={this.props.name} address={this.props.address}/>
     )

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 //import Student from '../src/Components/Student';
 
-class Campus extends Component{
 
+class Campus extends Component{
     constructor(props){
         super(props);
         this.state =

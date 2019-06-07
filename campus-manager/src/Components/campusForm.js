@@ -26,8 +26,9 @@ class CampusForm extends Component{
       };
     handleAdd()
     {
-        //Add the new campus to the list of campuses without needing to refresh the page
+        //Add the new campus to the list of campuses without needing to refresh the page-added the new object to existing array-pusging it
     }
+    //on submit
      
     
     render(){ 

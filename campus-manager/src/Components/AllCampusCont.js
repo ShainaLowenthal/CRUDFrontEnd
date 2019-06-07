@@ -7,13 +7,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import CampusForm from './campusForm';
-import Campus from './SingleCampusCont'
+import Campus from './SingleCampusCont';
 
-const AllCampus = ()=>{
+class AllCampus extends Component { //parent of single student with array of students that is rendered over 
 
-    
+        render(){
         return(
-<div>
+        <div>
            {/* <button><Link to="/campusForm" >Add Campus!</Link></button> */}
             <Campus></Campus>
             <CampusForm></CampusForm>
@@ -21,6 +21,7 @@ const AllCampus = ()=>{
             </div>
            
         )
+        }
     
 
 
