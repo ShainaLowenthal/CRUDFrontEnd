@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-<<<<<<< HEAD
-
-import Student from '../src/Components/Student';
-import Campus from '../src/Components/Campus';
-=======
 import PropTypes from 'prop-types';
 import Student from '../src/Components/Student';
 import Campus from '../src/Components/SingleCampusCont';
@@ -12,7 +7,7 @@ import CampusForm from '../src/Components/campusForm.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from '../src/Components/Home';
 import AllCampus from '../src/Components/AllCampusCont.js';
->>>>>>> f35d5c61aa5f64cd98553b20f7a2cf5e1eff7d01
+
 
 const student = {
   imageSrc: 'img/src',
@@ -45,26 +40,22 @@ const campus3 = {
 };
 
 let campuses =[campus1, campus2,campus3];
+
  App = () => {
   render() {
-<<<<<<< HEAD
-    return (
-      <div className="App">
-        <Student imageSrc="img/src" fullName="Bob The Builder" email="student@successfulCampus.org" gpa= "4.0" campus="Hunter" hasCampus="true"/>
-=======
->>>>>>> f35d5c61aa5f64cd98553b20f7a2cf5e1eff7d01
 
      const HomeComponent = () => (<Home/> );
   
-    const CampusComponent = () => (
+     const CampusComponent = () => (
         <Campus Name={this.props.name} address={this.props.address}  />
 
     );
     const AllCampuses = ()=>(
-      <AllCampus {campuses.id} /> 
+      <AllCampus id = {this.props.campuses.id} /> 
+    );
     const CampForm = () =>(
       <CampusForm Name={this.props.name} address={this.props.address}/>
-    )
+    );
     return (<Router>
 <div>
   <Route exact path="/" render={HomeComponent}/>
