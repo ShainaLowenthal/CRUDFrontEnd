@@ -7,12 +7,9 @@ class Campus extends Component{
 
     constructor(props){
         super(props);
-        this.state =
-        {
+        this.state = {
         hasStudent: false,
-        url: "http://localhost:3000/Campus"
-        
-    };
+        };
     }
 handleRemove = event =>
 {
@@ -51,4 +48,3 @@ Campus.propTypes = {
     id: PropTypes.string
 }
 export default Campus;
-
