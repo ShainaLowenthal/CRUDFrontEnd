@@ -10,9 +10,9 @@ class AllCampus extends Component{
   render () {
     return(
       <div>
+        <div><Link to="/"> Home </Link></div>
         <Campus />
         <CampusForm />
-        <div><Link to="/"> Home </Link></div>
       </div>
     );
   }

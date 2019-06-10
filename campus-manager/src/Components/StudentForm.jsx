@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Student from './Student';
 
+
 class StudentForm extends Component { 
   constructor(props){
     super(props);
@@ -56,33 +57,6 @@ class StudentForm extends Component {
             placeholder = {this.state.tempEmail} onChange ={this.handleChange}/>
 
             <button onClick={this.saveForm}>Save</button>
-            <button onClick={() => {
-              store.dispatch({
-                type: 'ADD_TODO',
-                text: this.input.value,
-                id: nextTodoId++
-              });
-              this.input.value = '';
-            }}> Add New Student Redux </button>
-
-            <ul>
-              {visibleTodos.map(todo => 
-                <li key = {todo.id} 
-                  onCLick = {() => {
-                    store.dispatch({
-                      type: 'TOGGLE_TODO',
-                      id: todo.id
-                    });
-                  }}
-                  style = {{
-                    textDecoration: todo.completed ? 
-                    'line-through' : 'none'
-                  }}>
-                  {todo.text}
-                </li> 
-              )}
-            </ul>
-
             <button onClick={this.cancelForm}>Cancel</button>
           </div>
       </form> );
