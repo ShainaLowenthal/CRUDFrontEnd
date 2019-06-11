@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import { fetchStudentThunk, removeStudentThunk } from '../thunks';
+import PropTypes from 'prop-types';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import AllStudents from '../src/Components/AllStudents';
-import AllCampuses from '../src/Components/AllCampusCont';
-import Home from '../src/Components/Home';
-
-//=============================================
-const express = require("express");
-const app = express();
-const apiRouter = require("../api");
-
-app.use("/api", apiRouter);
-
-app.listen(3000, () => {
-  console.log("Inside App listen api Router");
-})
-
+import AllStudents from '../Components/AllStudents';
+import AllCampuses from '../Components/AllCampusCont';
+import Home from '../Components/Home';
 
 // Smart Container
 class AppContainer extends Component {
@@ -25,36 +14,16 @@ class AppContainer extends Component {
 
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
-          <Route exact path="/" component={HomeComponent}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/students" component={AllStudents}/>
           <Route exact path="/campuses" component={AllCampuses}/>
         </div>
-      </Router>
+      </BrowserRouter>
     )
   }
-  
-  // Map state to props;
-  function mapState(state) {
-    return {
-      currentStudent: state.currentStudent ,
-      firstName: state.firstName,
-      lastName: state.lastName,
-      gpa: state.gpa,
-      campus: state.campus,
-      email: state.email
-    }
-  }
-
-  // Map dispatch to props;
-  function mapDispatch(dispatch) {
-    return {
-      fetchStudent: (lastName, firstName) => dispatch(fetchStudentThunk(lastName, firstName)),
-      removeStudent: () => dispatch(removeStudentThunk())
-    }
-  }
-
 };
 
-export default connect(mapState, mapDispatch)(AppContainer);
+  
+export default AppContainer;

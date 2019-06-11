@@ -34,11 +34,6 @@ class StudentForm extends Component {
     });
   };
   
-  handleAdd(){
-    return <Student firstName={this.state.firstName} 
-    lastName={this.state.lastName} email={this.state.email}/>
-  }
-     
   render(){ 
     if(this.state.addStudent){
       return (

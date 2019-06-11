@@ -27,15 +27,4 @@ class Student extends Component{
   }
 };
 
-Student.propTypes = {
-  	id: PropTypes.string.isRequired,
-    firstName: PropTypes.string.isRequired,
-  	lastName: PropTypes.string.isRequired,    
-  	email: PropTypes.string.isRequired,
-  	imageSrc: PropTypes.string,
-  	gpa: PropTypes.number.isRequired,
-  	campus: PropTypes.string,
-    hasCampus: PropTypes.bool
- };
-
 export default Student;
