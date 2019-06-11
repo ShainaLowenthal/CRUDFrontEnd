@@ -12,7 +12,6 @@ class AllStudents extends Component{
 
     }
   }
-
   componentDidMount (){
     this.props.fetchStudent()
   }
@@ -22,7 +21,6 @@ class AllStudents extends Component{
   // showStudent = () => {
   //  // Link to student id page
   // }
-
   render() {
     return(
       <div>
