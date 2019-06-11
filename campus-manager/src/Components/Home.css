@@ -1,20 +1,30 @@
-div h1{
-    color: purple;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+h1 {
+  color: purple;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 50px;    
 }
 
 a:link, a:visited {  
-    background-color: aqua;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  a:hover, a:active {
-    background-color: red;
-  }
+  background-color: purple;
+  color: white;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
 
+}
+  
+a:hover, a:active {
+  background-color: red;
+}
+
+#homeBody {
+  text-align: center;
+  background-color: #E69DF8;
+  padding: 50px;
+}
+
+.navBar {
+  display: inline-block;
+}
