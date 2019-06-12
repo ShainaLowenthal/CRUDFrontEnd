@@ -35,7 +35,7 @@ class AllStudents extends Component{
             return (
               <div className="studentListComponent" href="/"> 
                 <div className="studentName"><strong>{res.firstName} {res.lastName}</strong></div> 
-                <div className="studentCampus">{res.campus} </div>         
+                {/* <div className="studentCampus">{res.campus} </div>          */}
               </div>);
           })}
         </p>

@@ -15,7 +15,7 @@ class Campus extends Component{
   }
 
   componentDidMount() {
-    this.props.fetchAllStudents()
+    this.props.fetchCampus()
   }
 
   handleRemove = event => {
@@ -46,14 +46,14 @@ class Campus extends Component{
 // Map state to props; [required special function]
 function mapStateToProps(state) {
   return {
-    selectedStudent: state.currentStudent
+    selectedCampus: state.currentCampus
   }
 }
 
 // Map dispatch to props;
 function mapDispatch(dispatch) {
   return {
-    fetchStudent: () => dispatch(fetchStudentThunk())
+    fetchCampus: () => dispatch(fetchCampusThunk())
   }
 }
 

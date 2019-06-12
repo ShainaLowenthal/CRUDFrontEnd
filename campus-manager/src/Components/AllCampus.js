@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { fetchAllCampusesThunk } from '../thunks';
 import { Link } from 'react-router-dom';
 import CampusForm from './CampusForm';
-import Campus from './Campus';
 
 class AllCampus extends Component{
   constructor(props) {

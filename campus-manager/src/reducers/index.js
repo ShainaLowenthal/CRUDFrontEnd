@@ -2,3 +2,5 @@
 // The aliases of reducers in this file will be assigned as the names of the keys in the Redux store;
 export { default as currentStudent } from '../store/utilities/AllStudentsReducer';
 export { default as thisStudent} from '../store/utilities/StudentReducer';
+export { default as currentCampus} from '../store/utilities/CampusReducer';
+export { default as thisCampus} from '../store/utilities/AllCampusesReducer';
