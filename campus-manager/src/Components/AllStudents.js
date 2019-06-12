@@ -1,71 +1,62 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchStudentThunk } from '../thunks';
-import { Link } from 'react-router-dom';
+import { fetchAllStudentsThunk } from '../thunks';
+import {  Link, BrowserRouter, Route } from 'react-router-dom';
 import StudentForm from './StudentForm';
 import Student from './Student';
 
 class AllStudents extends Component{
   constructor(props) {
     super(props);
-    this.state ={
-
-    }
   }
 
-  componentDidMount (){
-    this.props.fetchStudent()
+  componentDidMount() {
+    this.props.fetchAllStudents()
   }
-  // Clicking on a student from the all-students 
+
+  // STILL NEEDED: Clicking on a student from the all-students 
   // view should navigate to show that student in 
   // the single-student view
-  // showStudent = () => {
-  //  // Link to student id page
-  // }
-
+ 
   render() {
+    console.log('All Students Render', this.props)
+    const {selectedStudent} = this.props
+
     return(
       <div>
-        <h1> All Students </h1>
-        <Link to="/">Home</Link>
-
+        <h1 className="title"> All Students </h1>
+        <div className="navBar">
+          <Link to="/">Home</Link>
+        </div>
         {/* Add new student via POST request */}
-        <button onClick={StudentForm}> Add New Student </button>
-
-        {/* <div onClick={this.showStudent}> */} 
-        {/* <div>{
-          students && students.map(obj => {
+        {/* Map over All Students Received from the database */}
+        <p>
+          {selectedStudent && selectedStudent.map(res => {
             return (
-              <div> 
-                <Student firstName = {obj.firstName} 
-                          lastName = {obj.lastName}
-                          email = {obj.email}
-                          gpa = {obj.gpa}
-                          campus = {obj.campus}/>
-                <Link to="/students" + {obj.id}>Click Student</Link>
-              </div> 
-            );
-          })
-
-        }</div> */}
+              <div className="studentListComponent" href="/"> 
+                <div className="studentName"><strong>{res.firstName} {res.lastName}</strong></div> 
+                <div className="studentCampus">{res.campus} </div>         
+              </div>);
+          })}
+        </p>
+        <StudentForm />
       </div>
     )
   }
-  };
+};
 
 // Map state to props; [required special function]
-  function mapStateToProps(state) {
-    return {
-      selectedStudent: state.currentStudent
-    }
+function mapStateToProps(state) {
+  return {
+    selectedStudent: state.currentStudent
   }
+}
 
-  // Map dispatch to props;
-  function mapDispatch(dispatch) {
-    return {
-      fetchStudent: () => dispatch(fetchStudentThunk())
-    }
+// Map dispatch to props;
+function mapDispatch(dispatch) {
+  return {
+    fetchAllStudents: () => dispatch(fetchAllStudentsThunk())
   }
-
+}
 
 export default connect(mapStateToProps, mapDispatch)(AllStudents);

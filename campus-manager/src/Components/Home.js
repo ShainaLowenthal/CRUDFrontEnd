@@ -6,11 +6,13 @@ class Home extends Component {
   render() {
     return (
       <div className = "homeBody">
-        <h1>Campus Manager Homepage</h1>
+        <div className = "title">
+          <h1><span className = "homeTitleSpan">Campus Manager Homepage</span></h1>
+        </div>
         <div className = "navBar">
           <Link to="/campuses">Campuses</Link> 
-      	  <Link to="/students">Students</Link>
-      	</div> 
+          <Link to="/students">Students</Link>
+        </div>
       </div>
     );
   }
