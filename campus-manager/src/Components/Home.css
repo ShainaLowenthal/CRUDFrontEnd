@@ -1,9 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+.homeBody{
+  margin: auto;
+}
+.navBar{
+  text-align: center;
+}
+
+
+img {
+  border: 1px solid rgb(23, 60, 71);
+  border-radius: 8px;
+}
 
 h1 {
-  color: purple;
+  color: white;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 50px;    
+  margin-top: 0;
+  margin-bottom: 30px; 
+  background-color:rgb(219, 187, 230);
+  padding: 90px;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+a{
+  background: linear-gradient(to right, #4c00ff 0%, #aa00ff 50%, #f700ff 100%);
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 5px;
+  margin-bottom: 10px;
 }
 
 a:link, a:visited {  
@@ -12,19 +38,27 @@ a:link, a:visited {
   padding: 14px 25px;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-
 }
-  
+
 a:hover, a:active {
+  background: transparent;
   background-color: red;
+  background: linear-gradient(to right, #ff0000 0%, #ffae00 50%, #fffb00 100%);
 }
 
-#homeBody {
-  text-align: center;
-  background-color: #E69DF8;
-  padding: 50px;
+.studentListComponent {
+  background-color: rgb(235, 103, 213);
+  color: white;
+  border: 1px solid rgb(169, 37, 187);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
 }
 
-.navBar {
-  display: inline-block;
+.studentCampus {
+  color:  rgb(72, 23, 78);
+}
+
+.studentName {
+  text-transform: uppercase;  
 }

@@ -18,7 +18,6 @@ const removeStudent = () => {
   }
 }
 
-// CURRENTLY PULLS FROM WRONG DATABASE
 // THUNK CREATORS;
 export const fetchStudentThunk = () => (dispatch) => {
   axios
@@ -33,7 +32,7 @@ export const removeStudentThunk = () => (dispatch) => {
 }
 
 // SINGLE STUDENT REDUCER;
-export default (state = [], action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_STUDENT:
       return action.payload;

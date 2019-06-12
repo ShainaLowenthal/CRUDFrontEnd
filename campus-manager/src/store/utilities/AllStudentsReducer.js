@@ -1,8 +1,3 @@
-// const express = require ("express");
-// const app = express ();
-// const parser = require("body-parser");
-// const morgan = require ("morgan");
-
 import axios from 'axios';
 
 // ACTION TYPES;
@@ -11,14 +6,16 @@ const REMOVE_ALL_STUDENTS = "REMOVE_ALL_STUDENTS";
 const ADD_STUDENT = "ADD_STUDENT";
 
 // ACTION CREATORS
-const fetchStudent = (student) => {
+
+// FETCHES ALL STUDENTS [] FROM EXPRESS SERVER
+const fetchAllStudents = (students) => {
   return {
     type: FETCH_ALL_STUDENTS,
-    payload: student
+    payload: students
   }
 }
 
-const removeStudent = () => {
+const removeAllStudents = () => {
   return {
     type: REMOVE_ALL_STUDENTS
   }
@@ -32,18 +29,17 @@ const addStudent = (student) => {
   }
 }
 
-// CURRENTLY PULLS FROM WRONG DATABASE
 // THUNK CREATORS;
-export const fetchStudentThunk = () => (dispatch) => {
+export const fetchAllStudentsThunk = () => (dispatch) => {
   return axios
     .get('/api/students')    
     .then(res => res.data)
-    .then(thisStudent => dispatch(fetchStudent(thisStudent)))
+    .then(thisStudent => dispatch(fetchAllStudents(thisStudent)))
     .catch(err => console.log(err));
 }
 
-export const removeStudentThunk = () => (dispatch) => {
-  return dispatch(removeStudent());
+export const removeAllStudentsThunk = () => (dispatch) => {
+  return dispatch(removeAllStudents());
 }
 
 // REDUCER;
@@ -52,7 +48,7 @@ export default (state = [], action) => {
     case FETCH_ALL_STUDENTS:
       return action.payload;
     case REMOVE_ALL_STUDENTS: 
-      return {};
+      return [];
     default:
       return state;
   }

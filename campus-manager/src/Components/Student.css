@@ -8,3 +8,12 @@ s
 	max-height: 100%;
 	background-color: lightcoral;
 }
+
+.studentContainer{
+	margin: auto;
+	width: 80%;
+}
+
+.title{
+	font-family: sans-serif;
+}
