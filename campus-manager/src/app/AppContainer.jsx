@@ -19,13 +19,15 @@ class AppContainer extends Component {
 
   componentDidMount(){
     // console.log('Before', this.props)
-    this.props.fetchStudent()
+    this.props.fetchStudent();
+    this.props.fetchCampus();//does it make sense to have both?
     // console.log('After', this.props)
   }
 
   render() {
     console.log('Render', this.props)
     const {selectedStudent} = this.props
+    const {selectedCampus} = this.props
     return (
       <BrowserRouter>
         <div>
@@ -45,14 +47,16 @@ class AppContainer extends Component {
 function mapStateToProps(state) {
   console.log(state)
   return {
-    selectedStudent: state.currentStudent
+    selectedStudent: state.currentStudent;
+    selectedCampus: state.currentCampus;
   }
 }
 
 // Map dispatch to props;
 function mapDispatch(dispatch) {
   return {
-    fetchStudent: () => dispatch(fetchStudentThunk())
+    fetchStudent: () => dispatch(fetchStudentThunk());
+    fetchCampus: () => dispatch(fetchCampusThunk());
   }
 }
 
